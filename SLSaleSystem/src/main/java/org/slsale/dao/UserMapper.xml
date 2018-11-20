@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.slsale.dao.UserMapper">
+    <select id="getUser" resultType="User">
+        select * from au_user where loginCode = #{loginCode} and 
+            password = #{password}
+    </select>
+    
+    <update id="updateUser" parameterType="User">
+        update au_user
+        <set>
+            <if test="loginCode != null and loginCode != ''">loginCode = #{loginCode},</if>
+            <if test="password != null and password != ''">password = #{password},</if>
+            <if test="password2 != null and password2 != ''">password2 = #{password2},</if>
+            <if test="userName != null and userName != ''">userName = #{userName},</if>
+            <if test="sex != null and sex != ''">sex = #{sex},</if>
+            <if test="birthday != null and birthday != ''">birthday = #{birthday},</if>
+            <if test="cardType != null and cardType != ''">cardType = #{cardType},</if>
+            <if test="cardTypeName != null and cardTypeName != ''">cardTypeName = #{cardTypeName},</if>
+            <if test="idCard != null and idCard != ''">idCard = #{idCard},</if>
+            <if test="country != null and country != ''">country = #{country},</if>
+            <if test="mobile != null and mobile != ''">mobile = #{mobile},</if>
+            <if test="email != null and email != ''">email = #{email},</if>
+            <if test="userAddress != null and userAddress != ''">userAddress = #{userAddress},</if>
+            <if test="postCode != null and postCode != ''">postCode = #{postCode},</if>
+            <if test="createTime != null">createTime = #{createTime},</if>
+            <if test="referId != null and referId != ''">referId = #{referId},</if>
+            <if test="referCode != null and referCode != ''">referCode = #{referCode},</if>
+            <if test="roleId != null and roleId != ''">roleId = #{roleId},</if>
+            <if test="roleName != null and roleName != ''">roleName = #{roleName},</if>
+            <if test="userType != null and userType != ''">userType = #{userType},</if>
+            <if test="userTypeName != null and userTypeName != ''">userTypeName = #{userTypeName},</if>
+            <if test="isStart != null and isStart != ''">isStart = #{isStart},</if>
+            <if test="lastUpdateTime != null">lastUpdateTime = #{lastUpdateTime},</if>
+            <if test="lastLoginTime != null">lastLoginTime = #{lastLoginTime},</if>
+            <if test="bankAccount != null and bankAccount != ''">bankAccount = #{bankAccount},</if>
+            <if test="bankName != null and bankName != ''">bankName = #{bankName},</if>
+            <if test="accountHolder != null and accountHolder != ''">accountHolder = #{accountHolder},</if>
+            <if test="idCardPicPath != null and idCardPicPath != ''">idCardPicPath = #{idCardPicPath},</if>
+            <if test="bankPicPath != null and bankPicPath != ''">bankPicPath = #{bankPicPath},</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>
