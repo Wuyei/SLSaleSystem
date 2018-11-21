@@ -42,4 +42,15 @@
         </set>
         where id = #{id}
     </update>
+    
+    <select id="getMainMenuByRoleId" resultType="Function" parameterType="int">
+        SELECT * FROM au_function WHERE id IN 
+            (SELECT functionId FROM au_authority WHERE roleId = #{roleId} ) 
+                AND parentId = 0
+    </select>
+    
+    <select id="getSubMenuByParentIdAndRoleId" resultType="Function" parameterType="int">
+        SELECT * FROM au_function WHERE parentId = #{parentId} AND id IN 
+            (SELECT functionId FROM au_authority WHERE roleId = #{roleId})
+    </select>
 </mapper>
