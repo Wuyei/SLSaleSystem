@@ -22,6 +22,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 
 @org.springframework.stereotype.Controller
+@RequestMapping("/user")
 public class LoginController extends BaseController{
     Logger logger = Logger.getLogger(LoginController.class);
     
@@ -32,13 +33,18 @@ public class LoginController extends BaseController{
      * 跳转登陆页
      * @return
      */
-    @RequestMapping("/index")
+    @RequestMapping("/index.html")
     public String index() {
         logger.info("==========Weclome to index.html===============");
         return "index";
     }
     
-    
+    /**
+     * 登陆
+     * @param session
+     * @param userStr
+     * @return
+     */
     @RequestMapping("/login.html")
     @ResponseBody
     public String login(HttpSession session,@RequestParam(required=false) String userStr) {
@@ -84,6 +90,9 @@ public class LoginController extends BaseController{
     public ModelAndView main() {
         logger.info("==========Weclome to main.html===============");
         User user = this.getCurrentUser();
+        if(null == user) {
+            return new ModelAndView("redirect:index.html");
+        }
         //所有主子菜单列表
         List<Menu> menuList = new ArrayList<Menu>();
         try {
@@ -97,5 +106,16 @@ public class LoginController extends BaseController{
         ModelAndView mv = new ModelAndView("main");
         mv.addObject("menuList", menuList);
         return mv;
+    }
+    
+    /**
+     * 退出
+     * @return
+     */
+    @RequestMapping("/logout.html")
+    public ModelAndView logout(HttpSession session) {
+        session.removeAttribute(Constants.SESSION_USER);    //清空session
+        this.setCurrentUser(null);  //清空BaseController 中的currentUser
+        return new ModelAndView("redirect:index.html");
     }
 }

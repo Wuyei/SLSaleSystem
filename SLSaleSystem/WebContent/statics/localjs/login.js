@@ -18,7 +18,7 @@ $("[type=button]").click(function(){
 			password : password
 	}
 	$.ajax({
-		url  : 'login.html',
+		url  : 'user/login.html',
 		type : 'post',
 		data : {"userStr" : JSON.stringify(user)},
 		dataType : "text",
@@ -30,7 +30,7 @@ $("[type=button]").click(function(){
 			}else if(result == 'error'){
 				$("#msg").html('未知错误');
 			}else if(result == 'success'){
-				window.location.href='main.html';
+				window.location.href='user/main.html';
 			}else{
 				$("#msg").html('未知异常');
 			}

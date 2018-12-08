@@ -21,7 +21,10 @@
 	<meta name="author" content="Muhammad Usman">
 
 	<!-- The styles -->
-	<link href="statics/css/bootstrap-cerulean.css" rel="stylesheet">
+	<link href="<%=request.getContextPath()%>/statics/css/bootstrap-cerulean.css" rel="stylesheet">
+	<script type="text/javascript">
+    var path = '<%=request.getContextPath()%>'
+        </script>
 	<style type="text/css">
 	  body {
 		padding-bottom: 40px;
@@ -38,33 +41,33 @@
 		color:black;
 	}
 	</style>
-	<link href="statics/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="statics/css/charisma-app.css" rel="stylesheet">
-	<link href="statics/css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
-	<link href='statics/css/fullcalendar.css' rel='stylesheet'>
-	<link href='statics/css/fullcalendar.print.css' rel='stylesheet'  media='print'>
-	<link href='statics/css/chosen.css' rel='stylesheet'>
-	<link href='statics/css/uniform.default.css' rel='stylesheet'>
-	<link href='statics/css/colorbox.css' rel='stylesheet'>
-	<link href='statics/css/jquery.cleditor.css' rel='stylesheet'>
-	<link href='statics/css/jquery.noty.css' rel='stylesheet'>
-	<link href='statics/css/noty_theme_default.css' rel='stylesheet'>
-	<link href='statics/css/elfinder.min.css' rel='stylesheet'>
-	<link href='statics/css/elfinder.theme.css' rel='stylesheet'>
-	<link href='statics/css/jquery.iphone.toggle.css' rel='stylesheet'>
-	<link href='statics/css/opa-icons.css' rel='stylesheet'>
-	<link href='statics/css/uploadify.css' rel='stylesheet'>
+	<link href="<%=request.getContextPath()%>/statics/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="<%=request.getContextPath()%>/statics/css/charisma-app.css" rel="stylesheet">
+	<link href="<%=request.getContextPath()%>/statics/css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+	<link href='<%=request.getContextPath()%>/statics/css/fullcalendar.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/fullcalendar.print.css' rel='stylesheet'  media='print'>
+	<link href='<%=request.getContextPath()%>/statics/css/chosen.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/uniform.default.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/colorbox.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/jquery.cleditor.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/jquery.noty.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/noty_theme_default.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/elfinder.min.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/elfinder.theme.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/jquery.iphone.toggle.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/opa-icons.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/css/uploadify.css' rel='stylesheet'>
 	<!-- 华丽丽滴分割线 北大青鸟 start 2014-->
 	<!-- add by bdqn_hl 2014-2-28 start-->
-<!-- 	<link href='statics/localcss/userlist.css' rel='stylesheet'>
-	<link href='statics/localcss/rolelist.css' rel='stylesheet'>
-	<link href='statics/localcss/authoritymanage.css' rel='stylesheet'>
-	<link href='statics/localcss/dicmanage.css' rel='stylesheet'>
-	<link href='statics/localcss/affiche.css' rel='stylesheet'>
-	<link href='statics/localcss/information.css' rel='stylesheet'>
-	<link href='statics/localcss/addgoodspack.css' rel='stylesheet'>
-	<link href='statics/localcss/mymessage.css' rel='stylesheet'>
-	<link href='statics/localcss/messagelist.css' rel='stylesheet'> -->
+<!-- 	<link href='<%=request.getContextPath()%>/statics/localcss/userlist.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/localcss/rolelist.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/localcss/authoritymanage.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/localcss/dicmanage.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/localcss/affiche.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/localcss/information.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/localcss/addgoodspack.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/localcss/mymessage.css' rel='stylesheet'>
+	<link href='<%=request.getContextPath()%>/statics/localcss/messagelist.css' rel='stylesheet'> -->
 	<!-- add by bdqn_hl 2014-2-28 end-->
 	
 	<!-- 华丽丽滴分割线 北大青鸟 end 2014 -->
@@ -74,7 +77,7 @@
 	<![endif]-->
 
 	<!-- The fav icon -->
-	<link rel="shortcut icon" href="statics/img/favicon.ico">
+	<link rel="shortcut icon" href="<%=request.getContextPath()%>/statics/img/favicon.ico">
 </head>
 <body>
 		<!-- topbar starts -->
@@ -86,7 +89,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="/main.html"> <img alt="Charisma Logo" src="statics/img/logo20.png" /> <span>SL会员商城</span></a>
+				<a class="brand" href="/main.html"> <img alt="Charisma Logo" src="<%=request.getContextPath()%>/statics/img/logo20.png" /> <span>SL会员商城</span></a>
 				<div class="btn-group pull-right" >
 					<ul class="nav">
 						<li><a href="#">你好，${currentUser.loginCode}</a></li>
@@ -95,7 +98,7 @@
 						<li><a href="#">购物车</a></li>
 						<li><a href="#">留言板</a></li>
 						<li><a href="javascript:void();" class="btn-setting modifypwd">修改密码</a></li>
-						<li><a href="/logout.html">注销</a></li>
+						<li><a href="<%=request.getContextPath()%>/user/logout.html">注销</a></li>
 					</ul>
 				</div>
 				<div class="modal hide fade" id="myModal">
